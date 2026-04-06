@@ -1,12 +1,34 @@
-/*
-Theme Name: RealEstate Theme
-Version: 1.0
-Requires at least: 4.7
-Requires PHP: 5.2.4
-Description: this is a realEstate theme
-Author: pardis
-Text Domain: realEstate
-domain path: /languages/
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+/* Customization for MIT IT4208 Project 
+Theme: Mekelle Rental House System 
 */
+
+:root {
+    --primary-color: #003366; /* Deep blue for a professional look */
+    --accent-color: #ffcc00;  /* Gold accent */
+}
+
+body {
+    font-family: 'Helvetica', sans-serif;
+    color: #333;
+}
+
+/* Change the header color */
+header, .navbar {
+    background-color: var(--primary-color) !important;
+}
+
+/* Change button colors */
+.btn-primary, .submit-button {
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+    color: #000 !important;
+}
+
+/* Add a custom footer message */
+footer::after {
+    content: " - Developed by MIT Group [Your Names] for Open Source Computing";
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+}
