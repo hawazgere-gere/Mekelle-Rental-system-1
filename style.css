@@ -1,12 +1,110 @@
-/*
-Theme Name: RealEstate Theme
-Version: 1.0
-Requires at least: 4.7
-Requires PHP: 5.2.4
-Description: this is a realEstate theme
-Author: pardis
-Text Domain: realEstate
-domain path: /languages/
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
+/* --- Mekelle Rental System: Professional UI Overhaul --- */
+
+/* 1. Global Colors & Typography */
+:root {
+    --mekelle-blue: #0056b3;
+    --mekelle-dark: #1a252f;
+    --mekelle-light: #f8f9fa;
+}
+
+/* 2. Hero Search Bar Styling */
+.home-search-filter {
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+    padding: 25px !important;
+    border: 1px solid #eee !important;
+}
+
+/* 3. Section Titles */
+.title-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--mekelle-blue);
+    border-radius: 2px;
+    margin-top: 15px;
+}
+
+/* 4. Professional Blue Buttons */
+.btn-primary, .btn-submit, .search-btn {
+    background-color: var(--mekelle-blue) !important;
+    border: none !important;
+    border-radius: 6px !important;
+    padding: 12px 25px !important;
+    transition: 0.3s ease all !important;
+}
+
+.btn-primary:hover {
+    background-color: #004494 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,86,179,0.3);
+}
+
+/* 5. Replacing the Red Banner with Professional Blue */
+.cta-banner-wrapper {
+    background: linear-gradient(135deg, #004a99 0%, #0056b3 100%) !important;
+    border-radius: 15px;
+}
+
+/* 6. Professional Footer */
+footer.site-footer {
+    background-color: var(--mekelle-dark) !important;
+    color: #ffffff !important;
+}
+
+/* 7. Image Hover Effects */
+.cities-pic-item img, .property-card img {
+    border-radius: 10px;
+    transition: 0.4s ease;
+}
+
+.cities-pic-item:hover img {
+    transform: scale(1.03);
+}
+/* --- Mekelle Rental: Footer Visibility Fix --- */
+
+/* 1. Force all text in the footer to be White */
+footer.site-footer, 
+footer.site-footer p, 
+footer.site-footer h4, 
+footer.site-footer span,
+footer.site-footer div {
+    color: #ffffff !important;
+    opacity: 1 !important; /* Ensures it isn't transparent */
+}
+
+/* 2. Make "Quick Links" visible and clean */
+footer.site-footer a {
+    color: #f8f9fa !important; /* Very light grey/white */
+    text-decoration: none !important;
+    transition: 0.3s ease;
+    display: inline-block;
+    padding: 3px 0;
+}
+
+/* 3. Add a nice hover effect so the instructor sees it's interactive */
+footer.site-footer a:hover {
+    color: #00d2ff !important; /* Light blue glow on hover */
+    padding-left: 5px;
+}
+
+/* 4. Fix Social Media Icons Visibility */
+footer.site-footer i, 
+footer.site-footer .fab, 
+footer.site-footer .fas {
+    color: #ffffff !important;
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+/* 5. Improve Newsletter Input visibility */
+footer.site-footer input[type="email"] {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff !important;
+    border-radius: 5px;
+}
+
+footer.site-footer input::placeholder {
+    color: #cccccc !important;
+}
