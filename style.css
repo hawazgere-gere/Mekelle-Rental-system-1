@@ -1,110 +1,271 @@
-/* --- Mekelle Rental System: Professional UI Overhaul --- */
+/* --- MEKELLE RENTAL SYSTEM - FINAL UI OVERHAUL --- */
 
-/* 1. Global Colors & Typography */
+/* 1. Root Colors */
 :root {
-    --mekelle-blue: #0056b3;
-    --mekelle-dark: #1a252f;
-    --mekelle-light: #f8f9fa;
+    --primary-blue: #0056b3;
+    --dark-footer: #1a252f;
+    --light-bg: #f8f9fa;
 }
 
-/* 2. Hero Search Bar Styling */
+/* 2. Global Section Spacing (Minimizing Gaps) */
+section {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+/* 3. Modern Search Bar */
 .home-search-filter {
     background: #ffffff !important;
     border-radius: 12px !important;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
-    padding: 25px !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08) !important;
+    padding: 20px !important;
     border: 1px solid #eee !important;
 }
 
-/* 3. Section Titles */
-.title-divider {
-    width: 60px;
-    height: 4px;
-    background: var(--mekelle-blue);
-    border-radius: 2px;
-    margin-top: 15px;
-}
-
-/* 4. Professional Blue Buttons */
+/* 4. Professional Buttons */
 .btn-primary, .btn-submit, .search-btn {
-    background-color: var(--mekelle-blue) !important;
+    background-color: var(--primary-blue) !important;
     border: none !important;
     border-radius: 6px !important;
-    padding: 12px 25px !important;
     transition: 0.3s ease all !important;
 }
 
 .btn-primary:hover {
     background-color: #004494 !important;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,86,179,0.3);
 }
 
-/* 5. Replacing the Red Banner with Professional Blue */
+/* 5. Footer Visibility Fix (Making text visible) */
+footer.site-footer, 
+footer.site-footer p, 
+footer.site-footer h4, 
+footer.site-footer div,
+footer.site-footer span {
+    color: #ffffff !important; /* Force text to white */
+}
+
+footer.site-footer a {
+    color: #cbd5e0 !important; /* Light grey for links */
+    text-decoration: none;
+}
+
+footer.site-footer a:hover {
+    color: #ffffff !important;
+}
+
+/* 6. Professional CTA Banner (Replacing Red) */
 .cta-banner-wrapper {
     background: linear-gradient(135deg, #004a99 0%, #0056b3 100%) !important;
     border-radius: 15px;
 }
+/* --- MEKELLE RENTAL: FINAL VISIBILITY & UI FIX --- */
 
-/* 6. Professional Footer */
-footer.site-footer {
-    background-color: var(--mekelle-dark) !important;
-    color: #ffffff !important;
-}
-
-/* 7. Image Hover Effects */
-.cities-pic-item img, .property-card img {
-    border-radius: 10px;
-    transition: 0.4s ease;
-}
-
-.cities-pic-item:hover img {
-    transform: scale(1.03);
-}
-/* --- Mekelle Rental: Footer Visibility Fix --- */
-
-/* 1. Force all text in the footer to be White */
+/* 1. Force Footer Text to be Visible (White) */
 footer.site-footer, 
+footer.site-footer .widget-title,
+footer.site-footer h3,
+footer.site-footer h4,
 footer.site-footer p, 
-footer.site-footer h4, 
+footer.site-footer div,
 footer.site-footer span,
-footer.site-footer div {
+footer.site-footer .textwidget {
     color: #ffffff !important;
-    opacity: 1 !important; /* Ensures it isn't transparent */
+    opacity: 1 !important;
 }
 
-/* 2. Make "Quick Links" visible and clean */
-footer.site-footer a {
-    color: #f8f9fa !important; /* Very light grey/white */
+/* 2. Fix Quick Links Visibility (Light Gray to White) */
+footer.site-footer a,
+footer.site-footer ul li a {
+    color: #e2e8f0 !important; 
     text-decoration: none !important;
+    font-weight: 500;
     transition: 0.3s ease;
-    display: inline-block;
-    padding: 3px 0;
 }
 
-/* 3. Add a nice hover effect so the instructor sees it's interactive */
 footer.site-footer a:hover {
-    color: #00d2ff !important; /* Light blue glow on hover */
-    padding-left: 5px;
+    color: #ffffff !important;
+    text-decoration: underline !important;
+    padding-left: 5px; /* Adds a professional interactive feel */
 }
 
-/* 4. Fix Social Media Icons Visibility */
+/* 3. Fix Social Media & Newsletter Icons */
 footer.site-footer i, 
 footer.site-footer .fab, 
 footer.site-footer .fas {
     color: #ffffff !important;
-    font-size: 1.2rem;
-    margin-right: 15px;
+    font-size: 1.1rem;
 }
 
-/* 5. Improve Newsletter Input visibility */
-footer.site-footer input[type="email"] {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+/* 4. Professional Button Branding (Trust Blue) */
+.btn-primary, .search-btn, .btn-submit, .btn-register {
+    background-color: #0056b3 !important;
     color: #ffffff !important;
-    border-radius: 5px;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 12px 25px !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-footer.site-footer input::placeholder {
+.btn-primary:hover {
+    background-color: #004494 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* 5. Clean up Section Spacing (Minimized Gaps) */
+section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+}
+
+/* 6. Copyright Bar Visibility */
+.copyright-bar, 
+.footer-bottom {
+    background-color: rgba(0,0,0,0.2);
+    color: #ffffff !important;
+    padding: 15px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+/* --- FOOTER VISIBILITY REPAIR --- */
+
+/* 1. Make the "About Mekelle Rental" description visible */
+footer.site-footer .textwidget, 
+footer.site-footer p {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    line-height: 1.6;
+}
+
+/* 2. Make "Quick Links" list items visible */
+footer.site-footer .widget_nav_menu ul li a,
+footer.site-footer a {
+    color: #f8f9fa !important; /* Off-white for links */
+    text-decoration: none !important;
+}
+
+/* 3. Make "Contact Us" text visible */
+footer.site-footer .widget_contact_info,
+footer.site-footer .contact-info-item,
+footer.site-footer span {
+    color: #ffffff !important;
+}
+
+/* 4. Make "Follow Us" icons and Titles visible */
+footer.site-footer h4, 
+footer.site-footer .widget-title {
+    color: #ffffff !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    margin-bottom: 20px !important;
+}
+
+footer.site-footer i, 
+footer.site-footer .fab, 
+footer.site-footer .fas {
+    color: #ffffff !important; /* Makes social icons white */
+}
+
+/* 5. Fix the bottom Copyright text */
+.footer-bottom, .copyright-bar {
+    color: #ffffff !important;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding: 15px 0;
+}
+
+/* 7. Footer Background */
+footer.site-footer {
+    background-color: var(--dark-footer) !important;
+    padding: 40px 0 20px;
+}
+/* --- MEKELLE RENTAL: ULTIMATE FOOTER VISIBILITY FIX --- */
+
+/* 1. Force all text under 'About', 'Quick Links', and 'Contact' to Pure White */
+.site-footer, 
+.site-footer p, 
+.site-footer .textwidget, 
+.site-footer .widget_text,
+.site-footer .widget_nav_menu ul li,
+.site-footer span,
+.site-footer div {
+    color: #ffffff !important; /* Forces text to White */
+    opacity: 1 !important;     /* Removes any transparency */
+    visibility: visible !important;
+}
+
+/* 2. Force 'Quick Links' menu items to be Visible and Light Gray */
+.site-footer ul li a, 
+.site-footer a {
+    color: #e2e8f0 !important; /* Light Gray for links */
+    text-decoration: none !important;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+/* 3. Add a Hover effect so the instructor sees it works */
+.site-footer a:hover {
+    color: #ffffff !important; /* Pure White on hover */
+    text-decoration: underline !important;
+}
+
+/* 4. Fix 'Follow Us' Social Icons */
+.site-footer .social-icons i, 
+.site-footer i.fab, 
+.site-footer i.fas {
+    color: #ffffff !important;
+    font-size: 1.2rem;
+}
+
+/* 5. Fix the Bottom Copyright Bar visibility */
+.footer-bottom, 
+.footer-bottom .copyright-text,
+.footer-bottom span {
+    color: #ffffff !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* --- ULTIMATE FOOTER VISIBILITY RESET --- */
+
+/* 1. Force EVERYTHING in the footer to be White */
+.site-footer, 
+.site-footer * {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* 2. Fix the specific Widget Titles (About, Quick Links, etc.) */
+.site-footer .widget-title, 
+.site-footer h3, 
+.site-footer h4 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    margin-bottom: 15px !important;
+}
+
+/* 3. Fix the Link colors in the "Quick Links" section */
+.site-footer ul li a, 
+.site-footer a {
+    color: #f8f9fa !important; /* Slightly off-white for links */
+    text-decoration: none !important;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s ease;
+}
+
+/* 4. Add a hover effect so the lecturer sees the links work */
+.site-footer a:hover {
+    color: #00d2ff !important; /* Blue glow on hover */
+    border-bottom: 1px solid #00d2ff;
+}
+
+/* 5. Fix the Newsletter input box text */
+.site-footer input::placeholder {
     color: #cccccc !important;
+}
+
+/* 6. Fix the Copyright bar at the very bottom */
+.footer-bottom, 
+.footer-bottom p, 
+.footer-bottom span,
+.footer-bottom a {
+    color: #ffffff !important;
+    background: rgba(0,0,0,0.2) !important; /* Darker bar for contrast */
 }
