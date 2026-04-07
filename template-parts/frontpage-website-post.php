@@ -1,8 +1,7 @@
-<!-- Start Slider -->
 <?php
 $args = array(
-    'posts_per_page' =>3,
-    'post_type' =>'post',
+    'posts_per_page' => 3,
+    'post_type'      => 'advertising_home', // This targets your rental listings
 );
 $posts = get_posts($args);
 if ($posts): ?>
@@ -11,10 +10,11 @@ if ($posts): ?>
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center feature mb-4">
-                    <h5> بلاگ و مقالات </h5>
-                    <p> اینجا پایگاه افزایش دانش شماست !! </p>
+                    <h5> Featured Properties </h5>
+                    <p> Explore the best house rentals available in Mekelle! </p>
                 </div>
             <?php foreach ($posts as $post):
+                setup_postdata($post); 
                 get_template_part('loop/frontpage','show-post');
             endforeach;
                 wp_reset_postdata();
@@ -23,5 +23,3 @@ if ($posts): ?>
         </div>
     </div>
 <?php endif; ?>
-
-

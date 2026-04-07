@@ -6,7 +6,7 @@ if (!isset($_GET['post_type'])):
         <div class="container">
             <div class="row">
                 <div class="col-12 mb-4">
-                    <span class="">نتایج جستجو برای:</span>
+                    <span class="">نsearch results for:</span>
                     <strong> <?php echo get_search_query() ?> </strong>
                     <!-- /.class -->
                 </div>

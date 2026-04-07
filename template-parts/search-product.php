@@ -1,26 +1,35 @@
-<div class="header-tow bg-white py-3 d-print-none">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <form class="d-lg-flex justify-content-center align-items-center text-center" action="<?php echo home_url() ?>" method="get">
-                    <input type="text" placeholder="عنوان آگهی . . . ." name="s" value="<?php echo (isset($_GET['s']) && !empty($_GET['s']))?$_GET['s']:'' ?>" class="form-control ml-lg-3 mb-2 mb-lg-0">
-                    <input type="hidden" name="post_type" value="advertising_home">
-                    <select class="custom-select ml-lg-3 mb-2 mb-lg-0" name="type">
-                        <option value="false"> نوع ملک </option>
-                        <option value="ویلایی" <?php if(isset($_GET['type']) && !empty($_GET['type'])) selected($_GET['type'],'ویلایی') ?>> ویلایی </option>
-                        <option value="آپارتمان" <?php if(isset($_GET['type']) && !empty($_GET['type'])) selected($_GET['type'],'آپارتمان') ?>> آپارتمان </option>
-                        <option value="تجاری" <?php if(isset($_GET['type']) && !empty($_GET['type'])) selected($_GET['type'],'تجاری') ?>> تجاری </option>
-                    </select>
-                    <select class="custom-select ml-lg-3 mb-2 mb-lg-0">
-                        <option selected> قیمت </option>
-                        <option value="1"> بالای 600 میلیون </option>
-                        <option value="2"> از 250 میلیون تا 600 میلیون </option>
-                        <option value="3">  از 0 تومن تا 250 میلیون </option>
-                    </select>
-                    <button class="btn px-4 py-2"> جستجو </button>
-                </form>
+<div class="home-search-box container mt-4 EnglishBar">
+    <form action="<?php echo home_url( '/' ); ?>" method="get">
+        <div class="row align-items-center bg-white shadow-sm p-3 rounded">
+            
+            <div class="col-md-4 border-right">
+                <input type="text" name="s" class="form-control border-0" placeholder="Search by area or house name..." value="<?php echo get_search_query(); ?>">
             </div>
+
+            <div class="col-md-3 border-right">
+                <select name="property_type" class="form-control border-0">
+                    <option value="">Property Type</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="house">House</option>
+                    <option value="studio">Studio</option>
+                </select>
+            </div>
+
+            <div class="col-md-3 border-right">
+                <select name="price_range" class="form-control border-0">
+                    <option value="">Price (ETB)</option>
+                    <option value="0-5000">Under 5,000</option>
+                    <option value="5000-10000">5,000 - 10,000</option>
+                    <option value="10000+">10,000+</option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-danger btn-block py-2 font-weight-bold">
+                    SEARCH
+                </button>
+            </div>
+
         </div>
-    </div>
+    </form>
 </div>
-<!-- End Header -->
