@@ -263,6 +263,89 @@ footer.site-footer {
 
 /* 6. Fix the Copyright bar at the very bottom */
 .footer-bottom, 
+/* --- MEKELLE RENTAL: HIGH-VISIBILITY FOOTER FIX --- */
+
+/* 1. Target all text in the footer specifically */
+.site-footer, 
+.site-footer .textwidget, 
+.site-footer p, 
+.site-footer span, 
+.site-footer li,
+.site-footer .widget-title,
+.site-footer h4 {
+    color: #ffffff !important;   /* Pure White */
+    opacity: 1 !important;        /* 100% Solid (Not transparent) */
+    font-weight: 500 !important;  /* Makes the text thicker */
+    visibility: visible !important;
+}
+
+/* 2. Make the Titles (About, Quick Links, etc.) even bolder */
+.site-footer .widget-title, 
+.site-footer h4 {
+    color: #ffffff !important;
+    font-weight: 800 !important;  /* Extra Bold for titles */
+    font-size: 1.2rem !important;
+    margin-bottom: 20px !important;
+}
+
+/* 3. Make the Links stand out */
+.site-footer a, 
+.site-footer ul li a {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+}
+
+/* 4. Add a bright hover effect */
+.site-footer a:hover {
+    color: #00d2ff !important;    /* Cyan glow when you hover */
+    text-decoration: underline !important;
+}
+
+/* 5. Fix the bottom-most copyright bar text */
+footer .footer-bottom, 
+footer .footer-bottom p, 
+footer .footer-bottom span {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+/* --- MEKELLE RENTAL: HIGH-VISIBILITY FOOTER FIX --- */
+
+/* This targets EVERY element inside the footer to be pure white and bold */
+footer.site-footer, 
+footer.site-footer *, 
+.footer-widgets, 
+.footer-widgets *,
+#footer-sidebar,
+#footer-sidebar * {
+    color: #ffffff !important;   /* Pure White */
+    opacity: 1 !important;        /* No transparency */
+    font-weight: 600 !important;  /* Make the font thicker/bolder */
+    visibility: visible !important;
+}
+
+/* Specifically fix the headings (About, Quick Links, etc.) */
+footer.site-footer .widget-title, 
+footer.site-footer h4 {
+    font-size: 1.3rem !important;
+    text-transform: uppercase !important;
+    margin-bottom: 15px !important;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    display: inline-block;
+}
+
+/* Fix the links so they don't turn blue or grey */
+footer.site-footer a {
+    color: #ffffff !important;
+    text-decoration: underline !important; /* Underline helps visibility */
+}
+
+/* Fix the bottom copyright bar */
+.footer-bottom, 
+.footer-bottom * {
+    background-color: #101921 !important; /* Darker background for more contrast */
+    color: #ffffff !important;
+}
 .footer-bottom p, 
 .footer-bottom span,
 .footer-bottom a {
