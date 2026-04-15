@@ -36,7 +36,7 @@
             color: #38bdf8 !important; 
         }
 
-        /* 3. Hide Unwanted Elements (Arabic search and fallback menus) */
+        /* 3. Hide Unwanted Elements */
         button.btn-danger:contains('جستجو'), 
         .row:has(input[placeholder*="آگهی"]),
         .home-search-filter,
@@ -53,7 +53,7 @@
             
             <a class="navbar-brand d-block" href="<?php echo home_url(); ?>" style="text-decoration: none !important;">
                  <h4 class="mb-0" style="color: white !important; font-weight: bold; letter-spacing: -0.5px;">
-                    MEKELLE <span style="color: #38bdf8 !important;">RENTAL SYSTEM</span>
+                    MEKELLE <span style="color: #ffffff !important;">RENTAL SYSTEM</span>
                  </h4>
             </a>
             
