@@ -33,3 +33,11 @@ function mekelle_scripts() {
     wp_enqueue_style( 'main-style', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'mekelle_scripts' );
+// IMPORTANT: Include rentals in search results
+function mekelle_include_rentals_in_search( $query ) {
+    if ( $query->is_search && !is_admin() ) {
+        $query->set( 'post_type', array( 'post', 'advertising' ) );
+    }
+    return $query;
+}
+add_filter( 'pre_get_posts', 'mekelle_include_rentals_in_search' );

@@ -9,8 +9,9 @@
         
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <form action="<?php echo site_url('/all-properties'); ?>" method="GET" class="p-2 bg-white rounded-pill shadow-lg d-flex">
-                    <input type="text" name="s" class="form-control border-0 rounded-pill px-4" placeholder="Search Ayder, Hawelti, Adi-Haki...">
+                <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" class="p-2 bg-white rounded-pill shadow-lg d-flex">
+                    <input type="text" name="s" class="form-control border-0 rounded-pill px-4" placeholder="Search Ayder, Hadnet, Quiha...">
+                    <input type="hidden" name="post_type" value="advertising" />
                     <button type="submit" class="btn btn-info rounded-pill px-5 font-weight-bold text-white">SEARCH</button>
                 </form>
             </div>
@@ -21,30 +22,29 @@
 <div class="container py-5">
     <div class="row text-center">
         <div class="col-md-4 mb-4">
-            <div class="p-4 bg-light rounded shadow-sm h-100">
-                <h4 class="font-weight-bold text-info">Verified Listings</h4>
-                <p class="text-muted small">We personally verify every landlord in Mekelle to ensure your safety.</p>
-            </div>
+            <a href="<?php echo site_url('/all-properties'); ?>" class="text-decoration-none">
+                <div class="p-4 bg-light rounded shadow-sm h-100 border card-hover">
+                    <h4 class="font-weight-bold text-info">Verified Listings</h4>
+                    <p class="text-muted small">Background-checked properties for your safety.</p>
+                </div>
+            </a>
         </div>
         <div class="col-md-4 mb-4">
-            <div class="p-4 bg-light rounded shadow-sm h-100">
-                <h4 class="font-weight-bold text-info">All Sub-Cities</h4>
-                <p class="text-muted small">From the city center to the outskirts of Quiha and Semien.</p>
-            </div>
+            <a href="<?php echo site_url('/contact-us'); ?>" class="text-decoration-none">
+                <div class="p-4 bg-light rounded shadow-sm h-100 border card-hover">
+                    <h4 class="font-weight-bold text-info">All Sub-Cities</h4>
+                    <p class="text-muted small">Serving Ayder, Hadnet, Kedamay Weyane, and more.</p>
+                </div>
+            </a>
         </div>
         <div class="col-md-4 mb-4">
-            <div class="p-4 bg-light rounded shadow-sm h-100">
-                <h4 class="font-weight-bold text-info">Direct Contact</h4>
-                <p class="text-muted small">Connect directly with owners without expensive middle-man fees.</p>
-            </div>
+            <a href="<?php echo site_url('/contact-us'); ?>" class="text-decoration-none">
+                <div class="p-4 bg-light rounded shadow-sm h-100 border card-hover">
+                    <h4 class="font-weight-bold text-info">Direct Contact</h4>
+                    <p class="text-muted small">Connect with landlords directly to save on fees.</p>
+                </div>
+            </a>
         </div>
-    </div>
-</div>
-
-<div class="bg-info py-5 text-white text-center">
-    <div class="container">
-        <h2 class="font-weight-bold mb-4">Ready to start your search?</h2>
-        <a href="<?php echo site_url('/all-properties'); ?>" class="btn btn-outline-light btn-lg px-5">View All Rentals</a>
     </div>
 </div>
 
