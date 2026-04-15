@@ -1,71 +1,51 @@
 <?php get_header(); ?>
 
-<section class="hero-wrapper bg-light border-bottom">
-    <div class="container py-3">
-        <?php get_template_part('template-parts/home-search-filter'); ?>
+<div class="hero-section d-flex align-items-center justify-content-center text-white text-center" 
+     style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('<?php echo get_template_directory_uri(); ?>/assets/images/mekelle-main.jpg'); 
+            height: 80vh; background-size: cover; background-position: center;">
+    <div class="container">
+        <h1 class="display-3 font-weight-bold mb-3">Find Your Home in Mekelle</h1>
+        <p class="lead mb-5">The most trusted rental marketplace for all seven sub-cities.</p>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form action="<?php echo site_url('/all-properties'); ?>" method="GET" class="p-2 bg-white rounded-pill shadow-lg d-flex">
+                    <input type="text" name="s" class="form-control border-0 rounded-pill px-4" placeholder="Search Ayder, Hawelti, Adi-Haki...">
+                    <button type="submit" class="btn btn-info rounded-pill px-5 font-weight-bold text-white">SEARCH</button>
+                </form>
+            </div>
+        </div>
     </div>
-    <?php get_template_part('template-parts/frontpage', 'top-slider'); ?>
-</section>
+</div>
 
-<main class="site-main-content">
-
-    <section class="featured-listings py-4">
-        <div class="container">
-            <div class="section-header text-center mb-4">
-                <h2 class="fw-bold text-dark">Premium Offers in Mekelle</h2>
-                <div class="title-divider mx-auto" style="width: 50px; height: 3px; background: #0f172a; margin-top: 10px;"></div>
-            </div>
-            <?php get_template_part('template-parts/frontpage', 'special-offer'); ?>
-            <div class="mt-3">
-                <?php get_template_part('template-parts/frontpage', 'top-view'); ?>
+<div class="container py-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="p-4 bg-light rounded shadow-sm h-100">
+                <h4 class="font-weight-bold text-info">Verified Listings</h4>
+                <p class="text-muted small">We personally verify every landlord in Mekelle to ensure your safety.</p>
             </div>
         </div>
-    </section>
-
-    <section class="neighborhood-gallery py-4 bg-white border-top">
-        <div class="container">
-            <div class="row align-items-center mb-3">
-                <div class="col-md-8">
-                    <h3 class="fw-bold">Explore by Neighborhood</h3>
-                    <p class="text-muted small">Find your perfect spot in Ayder, Hadnet, or Kedamay Weyane.</p>
-                </div>
-                <div class="col-md-4 text-md-end">
-                    <a href="#" class="btn btn-outline-primary btn-sm rounded-pill px-3">View All Areas</a>
-                </div>
-            </div>
-            <?php get_template_part('template-parts/frontpage', 'cities-pic'); ?>
-        </div>
-    </section>
-
-    <section class="choice-reason-section py-4 bg-light border-top border-bottom">
-        <div class="container text-center">
-            <?php my_the_field('choice_reason'); ?>
-        </div>
-    </section>
-
-    <section class="trust-signals py-4">
-        <div class="container">
-            <div class="mt-4">
-                <?php get_template_part('template-parts/frontpage', 'best-price'); ?>
+        <div class="col-md-4 mb-4">
+            <div class="p-4 bg-light rounded shadow-sm h-100">
+                <h4 class="font-weight-bold text-info">All Sub-Cities</h4>
+                <p class="text-muted small">From the city center to the outskirts of Quiha and Semien.</p>
             </div>
         </div>
-    </section>
-
-    <section class="cta-registration py-5" style="background: linear-gradient(to right, #27ae60, #2ecc71) !important;">
-        <div class="container">
-            <div class="cta-banner-wrapper p-4 text-white text-center">
-                <h2 class="fw-bold">List Your Property Today!</h2>
-                <p class="mb-4">Join thousands of verified owners and reach more renters in Mekelle.</p>
-                
-                <a href="<?php echo esc_url( wp_registration_url() ); ?>" 
-                   class="btn btn-light btn-lg rounded-pill px-5 shadow" 
-                   style="color: #27ae60; font-weight: bold; text-transform: uppercase; border: none;">
-                   Register Now
-                </a>
+        <div class="col-md-4 mb-4">
+            <div class="p-4 bg-light rounded shadow-sm h-100">
+                <h4 class="font-weight-bold text-info">Direct Contact</h4>
+                <p class="text-muted small">Connect directly with owners without expensive middle-man fees.</p>
             </div>
         </div>
-    </section>
+    </div>
+</div>
 
-</main>
+<div class="bg-info py-5 text-white text-center">
+    <div class="container">
+        <h2 class="font-weight-bold mb-4">Ready to start your search?</h2>
+        <a href="<?php echo site_url('/all-properties'); ?>" class="btn btn-outline-light btn-lg px-5">View All Rentals</a>
+    </div>
+</div>
 
 <?php get_footer(); ?>

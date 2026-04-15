@@ -1,77 +1,28 @@
-<!doctype html>
-<?php $options = get_option('new_theme_option'); ?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mekelle Rental System - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
-    <style>
-        /* 1. Global Layout */
-        body { 
-            text-align: left; 
-            direction: ltr; 
-            background-color: #f4f7f6; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        /* 2. Professional Header Styling */
-        .bg-navbar { 
-            background-color: #0f172a !important; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 10px 0;
-        }
-
-        /* This forces the menu links to stay white */
-        .navbar-nav a { 
-            color: #ffffff !important; 
-            font-weight: 500; 
-            text-transform: uppercase; 
-            letter-spacing: 0.5px;
-            padding: 10px 15px !important;
-            transition: color 0.3s ease;
-        }
-
-        .navbar-nav a:hover {
-            color: #38bdf8 !important; 
-        }
-
-        /* 3. Hide Unwanted Elements */
-        button.btn-danger:contains('جستجو'), 
-        .row:has(input[placeholder*="آگهی"]),
-        .home-search-filter,
-        .navbar-nav.fallback-menu { 
-            display: none !important; 
-        }
-    </style>
 </head>
-
 <body <?php body_class(); ?>>
-<header class="bg-navbar">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
     <div class="container">
-        <nav class="navbar navbar-expand-md navbar-dark px-md-0">
-            
-            <a class="navbar-brand d-block" href="<?php echo home_url(); ?>" style="text-decoration: none !important;">
-                 <h4 class="mb-0" style="color: white !important; font-weight: bold; letter-spacing: -0.5px;">
-                    MEKELLE <span style="color: #ffffff !important;">RENTAL SYSTEM</span>
-                 </h4>
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#amir">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <?php 
-            wp_nav_menu(array(
-                'theme_location' => 'header',
-                'container_class'=> 'collapse navbar-collapse',
-                'container_id'   => 'amir',
-                'menu_class'     => 'navbar-nav ml-auto menu pl-0 text-left', 
-                'fallback_cb'    => 'new_theme_WP_Bootstrap_Navwalker::fallback',
-                'walker'         => new new_theme_WP_Bootstrap_Navwalker(),
-            ));
+        <a class="navbar-brand font-weight-bold" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            MEKELLE RENTAL SYSTEM
+        </a>
+        
+        <div class="collapse navbar-collapse">
+            <?php
+            // Displays the "main menu" you built
+            wp_nav_menu( array(
+                'theme_location' => 'primary',
+                'container'      => false,
+                'menu_class'     => 'navbar-nav ml-auto',
+                'fallback_cb'    => false,
+            ) );
             ?>
-
-        </nav>
+        </div>
     </div>
-</header>
+</nav>

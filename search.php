@@ -8,24 +8,38 @@ if (have_posts()) :
         <div class="container">
             <div class="row">
                 <div class="col-12 mb-5 text-center">
-                    <h2 class="display-6">Search Results for: 
-                        <span class="text-danger">"<?php echo get_search_query(); ?>"</span>
+                    <h2 class="display-6 font-weight-bold">Search Results for: 
+                        <span class="text-info">"<?php echo get_search_query(); ?>"</span>
                     </h2>
-                    <hr style="width: 50px; border: 2px solid #e74c3c; margin: auto;">
+                    <hr style="width: 60px; border: 2px solid #17a2b8; margin: auto;">
                 </div>
 
                 <div class="col-12">
                     <div class="row">
                         <?php while (have_posts()) : the_post(); ?>
                             <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                <?php get_template_part('loop/archive', 'post'); ?>
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div style="height: 200px; overflow: hidden; background: #f8f9fa;">
+                                        <?php if (has_post_thumbnail()) : ?>
+                                            <?php the_post_thumbnail('medium_large', ['class' => 'card-img-top w-100 h-100', 'style' => 'object-fit: cover;']); ?>
+                                        <?php else : ?>
+                                            <div class="d-flex h-100 align-items-center justify-content-center text-muted small">No Photo</div>
+                                        <?php endif; ?>
+                                    </div>
+                                    
+                                    <div class="card-body">
+                                        <h5 class="font-weight-bold"><?php the_title(); ?></h5>
+                                        <p class="text-muted small"><?php echo wp_trim_words(get_the_content(), 12); ?></p>
+                                        <a href="<?php the_permalink(); ?>" class="btn btn-info btn-block text-white">View Details</a>
+                                    </div>
+                                </div>
                             </div>
                         <?php endwhile; ?>
                     </div>
                     
                     <div class="row mt-4">
-                        <div class="col-12">
-                            <?php get_template_part('template-parts/pagination'); ?>
+                        <div class="col-12 text-center">
+                            <?php the_posts_pagination(); ?>
                         </div>
                     </div>
                 </div>
@@ -34,14 +48,13 @@ if (have_posts()) :
     </main>
 
 <?php else : ?>
-    <main class="mt-5 mb-5">
-        <div class="container text-center">
+    <main class="mt-5 mb-5" style="min-height: 50vh;">
+        <div class="container text-center py-5">
             <div class="row">
-                <div class="col-12 py-5">
-                    <i class="fa fa-search-minus fa-3x mb-3 text-muted"></i>
-                    <h3>No Properties Found</h3>
-                    <p class="text-muted">We couldn't find any rentals matching "<?php echo get_search_query(); ?>". Try a different location in Mekelle.</p>
-                    <a href="<?php echo home_url(); ?>" class="btn btn-danger mt-3">Back to Home</a>
+                <div class="col-12">
+                    <h3 class="font-weight-bold">No Properties Found</h3>
+                    <p class="text-muted">We couldn't find any rentals matching "<?php echo get_search_query(); ?>". Try searching for <strong>Ayder</strong> or <strong>Hadnet</strong>.</p>
+                    <a href="<?php echo site_url('/all-properties'); ?>" class="btn btn-outline-info mt-3 px-5">View All Properties</a>
                 </div>
             </div>
         </div>
@@ -49,8 +62,5 @@ if (have_posts()) :
 <?php endif; ?>
 
 <?php 
-// Only show the "Register/Offer" banner, DO NOT call 'home-search-filter' here
-get_template_part('template-parts/register-offer'); 
-
 get_footer(); 
 ?>
